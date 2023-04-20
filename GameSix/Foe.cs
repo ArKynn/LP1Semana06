@@ -14,7 +14,7 @@ public class Foe
     
     public Foe(string name)
     {
-        this.Name = name;
+        SetName(name);
         Health = 100;
         Shield = 0;
     }
