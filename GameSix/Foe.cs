@@ -2,7 +2,7 @@
 
 public class Foe
 {
-    private string Name { get; }
+    private string Name { get; set; }
     private float Health { get; set; }
     private float Shield { get; set; }
     public Foe(string name)
@@ -15,6 +15,23 @@ public class Foe
     public string GetName()
     {
         return this.Name;
+    }
+
+    public void SetName(string newName)
+    {
+        newName = newName.Trim();
+        this.Name = newName;
+        return;
+    }
+
+    public float GetHealth()
+    {
+        return Health;
+    }
+    
+    public float GetShield()
+    {
+        return Shield;
     }
 
     public void TakeDamage(int damage)
