@@ -30,7 +30,7 @@ namespace GameSix
             
             Console.WriteLine($"Total powerups picked: {Foe.GetPickedPowerUps()}");
             
-            Console.WriteLine("Merci d’utiliser ce programme");
+            Console.WriteLine("Thanks for using this program!");
         }
     } 
 }
