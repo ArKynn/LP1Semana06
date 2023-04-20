@@ -5,6 +5,13 @@ public class Foe
     private string Name { get; set; }
     private float Health { get; set; }
     private float Shield { get; set; }
+    private static int _pickedPowerUps;
+
+    static Foe()
+    {
+        _pickedPowerUps = 0;
+    }
+    
     public Foe(string name)
     {
         this.Name = name;
@@ -63,5 +70,12 @@ public class Foe
             if (Shield > 100) Shield = 100;
             Console.WriteLine($"Shield Restored: {Shield - oldShield}");
         }
+
+        _pickedPowerUps++;
+    }
+
+    public static int GetPickedPowerUps()
+    {
+        return _pickedPowerUps;
     }
 }

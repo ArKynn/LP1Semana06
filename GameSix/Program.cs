@@ -22,6 +22,13 @@ namespace GameSix
             {
                 Console.WriteLine(enemy.GetName());
             }
+            
+            enemyArray[0].TakeDamage(70);
+            
+            enemyArray[0].PickupPowerUp(PowerUp.Health, 50);
+            enemyArray[0].PickupPowerUp(PowerUp.Shield, 90);
+            
+            Console.WriteLine($"Total powerups picked: {Foe.GetPickedPowerUps()}");
         }
     } 
 }
