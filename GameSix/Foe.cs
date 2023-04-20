@@ -21,7 +21,6 @@ public class Foe
     {
         newName = newName.Trim();
         this.Name = newName;
-        return;
     }
 
     public float GetHealth()
@@ -43,6 +42,26 @@ public class Foe
             Shield = 0;
             Health -= remainingDamage;
             if (Health < 0) Health = 0;
+        }
+    }
+
+    public void PickupPowerUp(PowerUp powerUp, float amount)
+    {
+        if (powerUp == PowerUp.Health)
+        {
+            float oldHp = this.Health;
+            
+            this.Health += amount;
+            if (Health > 100) Health = 100;
+            Console.WriteLine($"Health restored: {Health - oldHp}");
+        }
+        if (powerUp == PowerUp.Shield)
+        {
+            float oldShield = this.Shield;
+            
+            this.Shield += amount;
+            if (Shield > 100) Shield = 100;
+            Console.WriteLine($"Shield Restored: {Shield - oldShield}");
         }
     }
 }
