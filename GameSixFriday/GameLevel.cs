@@ -2,8 +2,8 @@
 
 public class GameLevel
 {
-    private Foe[] RoomArray { get; set; }
-    private Difficulty LevelDifficulty { get; set; }
+    private Foe[] RoomArray { get; }
+    private Difficulty LevelDifficulty { get; }
 
     public GameLevel(int roomNumber, Difficulty levelDifficulty)
     {
@@ -33,9 +33,10 @@ public class GameLevel
 
     public void PrintFoes()
     {
-        foreach (Foe enemyInRoom in RoomArray)
+        for (int room = 0; room < RoomArray.Length; room++)
         {
-            Console.WriteLine($"Enemy: {enemyInRoom.GetName()} Room: {Array.IndexOf(RoomArray, enemyInRoom)}");
+            if (RoomArray[room] != null)
+                Console.WriteLine($"Enemy: {RoomArray[room].GetName()} Room: {room}");
         }
     }
     
