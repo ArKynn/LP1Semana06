@@ -36,7 +36,7 @@ public class GameLevel
         for (int room = 0; room < RoomArray.Length; room++)
         {
             if (RoomArray[room] != null)
-                Console.WriteLine($"Enemy: {RoomArray[room].GetName()} Room: {room}");
+                Console.WriteLine($"Room {room}: {RoomArray[room].GetName()} ");
         }
     }
     
